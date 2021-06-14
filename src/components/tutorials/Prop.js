@@ -1,5 +1,5 @@
 import React from "react";
-import '../scss/Hello.scss'
+import '../../scss/Hello.scss'
 
 // 비구조화 할당을 이용한 prop값 가져오기(구조 분해)
 function Prop({name, color}) {

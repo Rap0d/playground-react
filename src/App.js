@@ -1,8 +1,8 @@
 // import logo from './logo.svg';
 import './App.css';
-import Hello from "./components/Hello";
-import Prop from "./components/Prop";
-import Wrapper from "./components/Wrapper";
+import Hello from "./components/tutorials/Hello";
+import Prop from "./components/tutorials/Prop";
+import Wrapper from "./components/tutorials/Wrapper";
 
 function App() {
     const propName = "App's Name"
