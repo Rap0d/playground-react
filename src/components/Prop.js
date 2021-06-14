@@ -15,10 +15,15 @@ function Prop({name, color}) {
         <>
             <h4>- prop 값 가져오기</h4>
             <div style={style}>Prop: {propName}</div>
+
             <h4>- prop에서 가져온 값으로 color 설정하기</h4>
             <div style={{color: color}}>Prop's color</div>
         </>
     )
+}
+
+Prop.defaultProps = {
+    color: 'skyblue'
 }
 
 export default Prop;

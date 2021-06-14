@@ -2,6 +2,7 @@
 import './App.css';
 import Hello from "./components/Hello";
 import Prop from "./components/Prop";
+import Wrapper from "./components/Wrapper";
 
 function App() {
     const propName = "App's Name"
@@ -56,6 +57,14 @@ function App() {
                     name={propName}
                     color={propColor}
                 />
+                <hr/>
+                <Wrapper>
+                    <Prop
+                        name={propName}
+                        color={propColor}
+                    />
+                    <Prop name={propName}/>
+                </Wrapper>
             </div>
         </div>
     );
