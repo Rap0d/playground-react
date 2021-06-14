@@ -4,6 +4,7 @@ import Hello from "./components/tutorials/Hello";
 import Prop from "./components/tutorials/Prop";
 import Wrapper from "./components/tutorials/Wrapper";
 import Conditional from "./components/tutorials/Conditional";
+import Counter from "./components/tutorials/Counter";
 
 function App() {
     const propName = "App's Name"
@@ -89,6 +90,8 @@ function App() {
                     />
                     <Conditional/>
                 </Wrapper>
+                <hr/>
+                <Counter/>
             </div>
         </div>
     );
