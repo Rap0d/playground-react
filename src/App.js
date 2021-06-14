@@ -3,6 +3,7 @@ import './App.css';
 import Hello from "./components/tutorials/Hello";
 import Prop from "./components/tutorials/Prop";
 import Wrapper from "./components/tutorials/Wrapper";
+import Conditional from "./components/tutorials/Conditional";
 
 function App() {
     const propName = "App's Name"
@@ -64,6 +65,29 @@ function App() {
                         color={propColor}
                     />
                     <Prop name={propName}/>
+                </Wrapper>
+                <hr/>
+                <h2>
+                    <a
+                        className="App-link"
+                        href={header.prop}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        3. 조건부 렌더링 Practice
+                    </a>
+                </h2>
+                <Wrapper>
+                    <Conditional
+                        name={'REACT'}
+                        isSpecial={true}
+                    />
+                    {/*true 생략 가능*/}
+                    <Conditional
+                        name={'REACT'}
+                        isSpecial
+                    />
+                    <Conditional/>
                 </Wrapper>
             </div>
         </div>
