@@ -6,7 +6,6 @@ import Wrapper from "./components/tutorials/Wrapper";
 import Conditional from "./components/tutorials/Conditional";
 import Counter from "./components/tutorials/Counter";
 import InputSample from "./components/tutorials/InputSample";
-import UserList from "./components/tutorials/UserList";
 import Arrays from "./components/tutorials/Arrays";
 import {useState} from "react";
 
@@ -27,17 +26,20 @@ function App() {
         {
             id: 1,
             username: 'kim',
-            email: 'aaa@bbb.com'
+            email: 'aaa@bbb.com',
+            active: true
         },
         {
             id: 2,
             username: 'lee',
-            email: 'ccc@ddd.com'
+            email: 'ccc@ddd.com',
+            active: false
         },
         {
             id: 3,
             username: 'park',
-            email: 'eee@fff.com'
+            email: 'eee@fff.com',
+            active: false
         }
     ])
 
@@ -144,23 +146,11 @@ function App() {
                 <h2>
                     <a
                         className="App-link"
-                        href={header.array}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        6. 배열 렌더링하기
-                    </a>
-                </h2>
-                <UserList users={propUsers}/>
-                <hr/>
-                <h2>
-                    <a
-                        className="App-link"
                         href={header.arrays}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        7. 배열 추가, 수정 및 삭제
+                        6. 배열 렌더링, 추가, 수정 및 삭제
                     </a>
                 </h2>
                 <Arrays

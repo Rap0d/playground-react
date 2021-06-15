@@ -39,6 +39,13 @@ function Arrays({propUsers, setUsers}) {
         // = user.id 가 id인 것을 제거
         setUsers(propUsers.filter(user => user.id !== id))
     }
+    const onToggle = id => {
+        setUsers(
+            propUsers.map(user =>
+                user.id === id ? {...user, active: !user.active} : user
+            )
+        )
+    }
 
     return (
         <>
@@ -51,6 +58,7 @@ function Arrays({propUsers, setUsers}) {
             <UserList
                 users={propUsers}
                 onRemove={onRemove}
+                onToggle={onToggle}
             />
         </>
     )
