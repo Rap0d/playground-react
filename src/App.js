@@ -154,7 +154,7 @@ function App() {
                     </a>
                 </h2>
                 <Arrays
-                    propUsers={propUsers}
+                    users={propUsers}
                     setUsers={setUsers}
                 />
             </div>
