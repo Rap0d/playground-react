@@ -7,19 +7,39 @@ import Conditional from "./components/tutorials/Conditional";
 import Counter from "./components/tutorials/Counter";
 import InputSample from "./components/tutorials/InputSample";
 import UserList from "./components/tutorials/UserList";
+import Arrays from "./components/tutorials/Arrays";
+import {useState} from "react";
 
 function App() {
-    const propName = "App's Name"
-    const propColor = "red"
-
     const header = {
         jsx: 'https://react.vlpt.us/basic/04-jsx.html',
         prop: 'https://react.vlpt.us/basic/05-props.html',
         conditionals: 'https://react.vlpt.us/basic/06-conditional-rendering.html',
         state: 'https://react.vlpt.us/basic/07-useState.html',
         input: 'https://react.vlpt.us/basic/08-manage-input.html',
-        array: 'https://react.vlpt.us/basic/11-render-array.html'
+        array: 'https://react.vlpt.us/basic/11-render-array.html',
+        arrays: 'https://react.vlpt.us/basic/12-variable-with-useRef.html'
     }
+
+    const propName = "App's Name"
+    const propColor = "red"
+    const [propUsers, setUsers] = useState([
+        {
+            id: 1,
+            username: 'kim',
+            email: 'aaa@bbb.com'
+        },
+        {
+            id: 2,
+            username: 'lee',
+            email: 'ccc@ddd.com'
+        },
+        {
+            id: 3,
+            username: 'park',
+            email: 'eee@fff.com'
+        }
+    ])
 
     return (
         <div className="App">
@@ -131,7 +151,22 @@ function App() {
                         6. 배열 렌더링하기
                     </a>
                 </h2>
-                <UserList/>
+                <UserList users={propUsers}/>
+                <hr/>
+                <h2>
+                    <a
+                        className="App-link"
+                        href={header.arrays}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        7. 배열 추가, 수정 및 삭제
+                    </a>
+                </h2>
+                <Arrays
+                    propUsers={propUsers}
+                    setUsers={setUsers}
+                />
             </div>
         </div>
     );

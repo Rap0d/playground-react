@@ -1,23 +1,5 @@
 import React from "react";
 
-const users = [
-    {
-        id: 1,
-        username: 'kim',
-        email: 'aaa@bbb.com'
-    },
-    {
-        id: 2,
-        username: 'lee',
-        email: 'ccc@ddd.com'
-    },
-    {
-        id: 3,
-        username: 'park',
-        email: 'eee@fff.com'
-    }
-]
-
 function User({user}) {
     return (
         <div>
@@ -40,7 +22,7 @@ function UserList() {
 }
 */
 
-function DynamicUserList() {
+function DynamicUserList({users}) {
     return (
         <>
             <p>동적 배열 렌더링</p>
