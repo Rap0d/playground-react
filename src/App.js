@@ -6,6 +6,7 @@ import Wrapper from "./components/tutorials/Wrapper";
 import Conditional from "./components/tutorials/Conditional";
 import Counter from "./components/tutorials/Counter";
 import InputSample from "./components/tutorials/InputSample";
+import UserList from "./components/tutorials/UserList";
 
 function App() {
     const propName = "App's Name"
@@ -16,7 +17,8 @@ function App() {
         prop: 'https://react.vlpt.us/basic/05-props.html',
         conditionals: 'https://react.vlpt.us/basic/06-conditional-rendering.html',
         state: 'https://react.vlpt.us/basic/07-useState.html',
-        input: 'https://react.vlpt.us/basic/08-manage-input.html'
+        input: 'https://react.vlpt.us/basic/08-manage-input.html',
+        array: 'https://react.vlpt.us/basic/11-render-array.html'
     }
 
     return (
@@ -118,6 +120,18 @@ function App() {
                     </a>
                 </h2>
                 <InputSample/>
+                <hr/>
+                <h2>
+                    <a
+                        className="App-link"
+                        href={header.array}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        6. 배열 렌더링하기
+                    </a>
+                </h2>
+                <UserList/>
             </div>
         </div>
     );
