@@ -44,6 +44,7 @@ function Arrays({users, setUsers}) {
                 username,
                 email
             }
+            // 함수형 업데이트 -> deps 의 users가 빠지게 된다.
             setUsers(users => [...users, user])
 
             setInputs({
