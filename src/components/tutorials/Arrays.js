@@ -1,6 +1,11 @@
-import React, {useRef, useState} from "react";
+import React, {useMemo, useRef, useState} from "react";
 import UserList from "./UserList";
 import CreateUser from "./CreateUser";
+
+function countActiveUsers(users) {
+    console.log('Count Active Users..')
+    return users.filter(user => user.active).length
+}
 
 function Arrays({propUsers, setUsers}) {
     const nextId = useRef(4)
@@ -47,6 +52,19 @@ function Arrays({propUsers, setUsers}) {
         )
     }
 
+    /*
+    input값이 바뀔때 마다 컴포넌트가 리렌더링 되므로 자원낭비가 됨
+    따라서 useMemo 함수를 사용하여 성능 최적화
+
+    - 첫 번째 파라미터: 어떻게 연산할지 정의하는 함수
+    - 두 번째 파라미터: deps 배열을 넣어주어 해당 배열의 내용이 바뀌면
+        등록한 함수를 호출하여 값을 연산하고,
+        내용이 바뀌지 않았다면 이전에 연산한 값을 재사용
+     */
+    const count = useMemo(
+        () => countActiveUsers(propUsers), [propUsers]
+    )
+
     return (
         <>
             <CreateUser
@@ -60,6 +78,7 @@ function Arrays({propUsers, setUsers}) {
                 onRemove={onRemove}
                 onToggle={onToggle}
             />
+            <div>Users: {count}</div>
         </>
     )
 }
