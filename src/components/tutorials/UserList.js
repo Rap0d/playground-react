@@ -1,6 +1,40 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 function User({user, onRemove, onToggle}) {
+    // Component의 Mount/Unmount 이벤트를 위한 useEffect 함수
+    // 첫 번째 파라미터: 함수
+    // 두 번째 파라미터: 의존값이 들어있는 배열(deps)
+    // 만약 deps 배열이 비워지게 되면 컴포넌트가 처음 나타날 때만 useEffect 호출
+
+    useEffect(() => {
+        console.log('Set User')
+        console.log(user)
+        // 반환되는 함수: cleanup 함수
+        // deps가 비어있는 경우에[] 컴포넌트가 사라질 때 cleanup 함수 호출
+        return () => {
+            console.log('Before Set User')
+            console.log(user)
+        }
+
+        /*
+        deps에 특정 값을 넣게되면 컴포넌트가 처음 마운트 될 때도 호출
+        지정한 값이 바뀌거나 언마운트 시에도 호출
+
+        deps를 아예 사용하지 않으면 리렌더링할 때 마다 호출
+        */
+    }, [user])
+    /*
+        주로 마운트 시의 작업:
+        - props로 받은 값을 컴포넌트의 로컬 상태로 설정
+        - 외부 API요청
+        - 라이브러리 사용(D3, Video.js)
+        - setInterval을 통한 반복 작업 혹은 setTimeout을 통한 작업 예약
+
+        언마운트 시의 작업
+        - setInterval, setTimeout 을 사용하여 등록한 작업 Clear
+        - 라이브러리 인스턴스 제거
+     */
+
     return (
         <div>
             <b
