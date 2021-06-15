@@ -24,10 +24,10 @@ function Arrays({users, setUsers}) {
     const onChange = useCallback(
         e => {
             const {name, value} = e.target
-            setInputs({
+            setInputs(inputs => ({
                 ...inputs,
                 [name]: value
-            })
+            }))
         },
         /*
          함수 안에서 사용하는 상태 혹은 props가 있다면 꼭 deps에 포함
@@ -35,7 +35,7 @@ function Arrays({users, setUsers}) {
          함수에서 해당 값들을 참조할 때 최신 값을 사용한다는 보장이 없음
          props 에서 받아온 함수가 있다면 그 또한 deps에 넣어줘야 함
          */
-        [inputs]
+        []
     )
     const onCreate = useCallback(
         () => {
@@ -44,10 +44,7 @@ function Arrays({users, setUsers}) {
                 username,
                 email
             }
-            setUsers([
-                ...users,
-                user
-            ])
+            setUsers(users => [...users, user])
 
             setInputs({
                 username: '',
@@ -55,25 +52,26 @@ function Arrays({users, setUsers}) {
             })
             nextId.current += 1
         },
-        [username, email, setUsers, users]
+        [username, email, setUsers]
     )
     const onRemove = useCallback(
         id => {
             // user.id 가 파라미터로 일치하지 않는 원소만 추출해서 새로운 배열 생성
             // = user.id 가 id인 것을 제거
-            setUsers(users.filter(user => user.id !== id))
+            setUsers(users => users.filter(user => user.id !== id))
         },
-        [setUsers, users]
+        [setUsers]
     )
     const onToggle = useCallback(
         id => {
             setUsers(
-                users.map(user =>
-                    user.id === id ? {...user, active: !user.active} : user
-                )
+                users =>
+                    users.map(user =>
+                        user.id === id ? {...user, active: !user.active} : user
+                    )
             )
         },
-        [setUsers, users]
+        [setUsers]
     )
 
     /*

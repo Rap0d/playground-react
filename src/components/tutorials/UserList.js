@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 
-function User({user, onRemove, onToggle}) {
+const User = React.memo(function User({user, onRemove, onToggle}) {
     // Component의 Mount/Unmount 이벤트를 위한 useEffect 함수
     // 첫 번째 파라미터: 함수
     // 두 번째 파라미터: 의존값이 들어있는 배열(deps)
@@ -52,7 +52,7 @@ function User({user, onRemove, onToggle}) {
             <button onClick={() => onRemove(user.id)}>Delete</button>
         </div>
     );
-}
+})
 
 // 정적 배열 렌더링
 /*
@@ -97,4 +97,4 @@ function DynamicUserList({users, onRemove, onToggle}) {
     )
 }
 
-export default DynamicUserList
+export default React.memo(DynamicUserList)
