@@ -34,6 +34,11 @@ function Arrays({propUsers, setUsers}) {
         })
         nextId.current += 1
     }
+    const onRemove = id => {
+        // user.id 가 파라미터로 일치하지 않는 원소만 추출해서 새로운 배열 생성
+        // = user.id 가 id인 것을 제거
+        setUsers(propUsers.filter(user => user.id !== id))
+    }
 
     return (
         <>
@@ -43,7 +48,10 @@ function Arrays({propUsers, setUsers}) {
                 onChange={onChange}
                 onCreate={onCreate}
             />
-            <UserList users={propUsers}/>
+            <UserList
+                users={propUsers}
+                onRemove={onRemove}
+            />
         </>
     )
 }
