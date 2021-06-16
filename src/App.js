@@ -8,6 +8,7 @@ import Counter from "./components/tutorials/Counter";
 import InputSample from "./components/tutorials/InputSample";
 import Arrays from "./components/tutorials/Arrays";
 import {useState} from "react";
+import UseReducer from "./components/tutorials/UseReducer";
 
 function App() {
     const header = {
@@ -17,7 +18,8 @@ function App() {
         state: 'https://react.vlpt.us/basic/07-useState.html',
         input: 'https://react.vlpt.us/basic/08-manage-input.html',
         array: 'https://react.vlpt.us/basic/11-render-array.html',
-        arrays: 'https://react.vlpt.us/basic/12-variable-with-useRef.html'
+        arrays: 'https://react.vlpt.us/basic/12-variable-with-useRef.html',
+        reduce: 'https://react.vlpt.us/basic/20-useReducer.html'
     }
 
     const propName = "App's Name"
@@ -156,6 +158,19 @@ function App() {
                 <Arrays
                     users={propUsers}
                     setUsers={setUsers}
+                />
+                <hr/>
+                <h2>
+                    <a
+                        className="App-link"
+                        href={header.reduce}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        7. Reducer를 사용한 상태 변화
+                    </a>
+                </h2>
+                <UseReducer
                 />
             </div>
         </div>
