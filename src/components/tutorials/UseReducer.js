@@ -1,6 +1,7 @@
 import React, {useCallback, useMemo, useReducer, useRef} from "react";
 import CreateUser from "./CreateUser";
 import UserList from "./UserList";
+import useInputs from "../../hooks/useInputs";
 
 function countActiveUsers(users) {
     console.log('Count Users..')
@@ -87,20 +88,15 @@ useReducer로 관리하는 것이 편하다.
  * @constructor
  */
 function UseReducer() {
+    // useInput: 커스텀 Hook
+    const [{username, email}, onChange, reset] = useInputs({
+        username: '',
+        email: ''
+    })
     const [state, dispatch] = useReducer(reducer, initialState)
     const nextId = useRef(4)
 
     const {users} = state
-    const {username, email} = state.inputs
-
-    const onChange = useCallback(e => {
-        const {name, value} = e.target
-        dispatch({
-            type: 'CHANGE_INPUT',
-            name,
-            value
-        })
-    }, [])
 
     const onCreate = useCallback(() => {
         dispatch({
@@ -111,8 +107,10 @@ function UseReducer() {
                 email
             }
         })
+        // input값 초기화
+        reset()
         nextId.current++
-    }, [username, email])
+    }, [username, email, reset])
 
     const onToggle = useCallback(id => {
         dispatch({
