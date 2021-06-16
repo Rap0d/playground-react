@@ -9,6 +9,7 @@ import InputSample from "./components/tutorials/InputSample";
 import Arrays from "./components/tutorials/Arrays";
 import {useState} from "react";
 import UseReducer from "./components/tutorials/UseReducer";
+import ContextApi from "./components/tutorials/ContextApi";
 
 function App() {
     const header = {
@@ -171,6 +172,19 @@ function App() {
                     </a>
                 </h2>
                 <UseReducer
+                />
+                <hr/>
+                <h2>
+                    <a
+                        className="App-link"
+                        href={header.reduce}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        8. ContextApi를 이용한 전역 값 관리
+                    </a>
+                </h2>
+                <ContextApi
                 />
             </div>
         </div>
