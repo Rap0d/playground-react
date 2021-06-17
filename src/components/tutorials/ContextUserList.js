@@ -15,9 +15,7 @@ const User = React.memo(function User({user}) {
                 onClick={() => {
                     dispatch({type: 'TOGGLE_USER', id: user.id})
                 }}
-            >{user.username}</b>
-            &npsp;
-            <span>({user.email})</span>
+            >{user.username}</b> <span>({user.email})</span>
             <button
                 onClick={() => {
                     dispatch({type: 'REMOVE_USER', id: user.id})
@@ -28,8 +26,7 @@ const User = React.memo(function User({user}) {
     );
 })
 
-// 정적 배열 렌더링
-function UserList({users}) {
+function ContextUserList({users}) {
     return (
         <>
             {users.map(user => (
@@ -39,4 +36,4 @@ function UserList({users}) {
     )
 }
 
-export default React.memo(UserList)
+export default React.memo(ContextUserList)

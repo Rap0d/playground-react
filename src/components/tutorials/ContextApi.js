@@ -1,8 +1,7 @@
 import React, {useCallback, useMemo, useReducer, useRef} from "react";
 import useInputs from "../../hooks/useInputs";
 import CreateUser from "./CreateUser";
-import DynamicUserList from "./UserList";
-import UserList from "./UserList";
+import ContextUserList from "./ContextUserList";
 
 function countActiveUsers(users) {
     console.log('Count Users..')
@@ -107,7 +106,7 @@ function ContextApi() {
                 onChange={onChange}
                 onCreate={onCreate}
             />
-            <UserList
+            <ContextUserList
                 users={users}
             />
             <div>count: {count}</div>
