@@ -1,6 +1,5 @@
 import React, {useMemo, useReducer} from "react";
 import produce from "immer";
-import CreateUser from "./CreateUser";
 import ImmerUserList from "./ImmerUserList";
 
 function countActiveUsers(users) {
@@ -68,7 +67,6 @@ function ImmerSample() {
     const count = useMemo(() => countActiveUsers(users), [users]);
     return (
         <UserDispatch.Provider value={dispatch}>
-            <CreateUser/>
             <ImmerUserList users={users}/>
             <div>Count: {count}</div>
         </UserDispatch.Provider>
