@@ -10,6 +10,7 @@ import Arrays from "./components/tutorials/Arrays";
 import {useState} from "react";
 import UseReducer from "./components/tutorials/UseReducer";
 import ContextApi from "./components/tutorials/ContextApi";
+import ImmerSample from "./components/tutorials/ImmerSample";
 
 function App() {
     const header = {
@@ -185,6 +186,19 @@ function App() {
                     </a>
                 </h2>
                 <ContextApi
+                />
+                <hr/>
+                <h2>
+                    <a
+                        className="App-link"
+                        href={header.reduce}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        9. Immer를 사용한 쉬운 배열의 불변성 유지 및 관리
+                    </a>
+                </h2>
+                <ImmerSample
                 />
             </div>
         </div>
