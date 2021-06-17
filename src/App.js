@@ -1,5 +1,5 @@
 // import logo from './logo.svg';
-import './App.css';
+import './scss/App.scss';
 import Hello from "./components/tutorials/Hello";
 import Prop from "./components/tutorials/Prop";
 import Wrapper from "./components/tutorials/Wrapper";
@@ -13,9 +13,10 @@ import ContextApi from "./components/tutorials/ContextApi";
 import ImmerSample from "./components/tutorials/ImmerSample";
 import HelloWithClass from "./components/tutorials/HelloWithClass";
 import CounterWithClass from "./components/tutorials/CounterWithClass";
+import Button from "./components/tutorials/Button";
 
 function App() {
-    const header = {
+    const tutoHeader = {
         jsx: 'https://react.vlpt.us/basic/04-jsx.html',
         prop: 'https://react.vlpt.us/basic/05-props.html',
         conditionals: 'https://react.vlpt.us/basic/06-conditional-rendering.html',
@@ -26,6 +27,10 @@ function App() {
         reduce: 'https://react.vlpt.us/basic/20-useReducer.html',
         immer: 'https://react.vlpt.us/basic/23-immer.html',
         classComponent: 'https://react.vlpt.us/basic/24-class-component.html'
+    }
+
+    const styleHeader = {
+        sass: 'https://react.vlpt.us/styling/01-sass.html'
     }
 
     const propName = "App's Name"
@@ -72,7 +77,7 @@ function App() {
                 <h2>
                     <a
                         className="App-link"
-                        href={header.jsx}
+                        href={tutoHeader.jsx}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -84,7 +89,7 @@ function App() {
                 <h2>
                     <a
                         className="App-link"
-                        href={header.prop}
+                        href={tutoHeader.prop}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -107,7 +112,7 @@ function App() {
                 <h2>
                     <a
                         className="App-link"
-                        href={header.conditionals}
+                        href={tutoHeader.conditionals}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -130,7 +135,7 @@ function App() {
                 <h2>
                     <a
                         className="App-link"
-                        href={header.state}
+                        href={tutoHeader.state}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -142,7 +147,7 @@ function App() {
                 <h2>
                     <a
                         className="App-link"
-                        href={header.input}
+                        href={tutoHeader.input}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -154,7 +159,7 @@ function App() {
                 <h2>
                     <a
                         className="App-link"
-                        href={header.arrays}
+                        href={tutoHeader.arrays}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -169,7 +174,7 @@ function App() {
                 <h2>
                     <a
                         className="App-link"
-                        href={header.reduce}
+                        href={tutoHeader.reduce}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -182,7 +187,7 @@ function App() {
                 <h2>
                     <a
                         className="App-link"
-                        href={header.reduce}
+                        href={tutoHeader.reduce}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -195,7 +200,7 @@ function App() {
                 <h2>
                     <a
                         className="App-link"
-                        href={header.immer}
+                        href={tutoHeader.immer}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -208,7 +213,7 @@ function App() {
                 <h2>
                     <a
                         className="App-link"
-                        href={header.classComponent}
+                        href={tutoHeader.classComponent}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -219,6 +224,57 @@ function App() {
                 />
                 <CounterWithClass
                 />
+                <hr/>
+                <h1><a
+                    className="App-link"
+                    href={styleHeader.sass}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >Style Sample
+                </a></h1>
+                <div className={"sassTest"}>
+                    <div>
+                        <Button
+                            size={'large'}
+                            onClick={() => alert('Click!')}
+                        >Button</Button>
+                        <Button>Button</Button>
+                        <Button size={'small'}>Button</Button>
+                    </div>
+
+                    <hr/>
+
+                    <div>
+                        <Button size={'large'} color={'pink'}>Button</Button>
+                        <Button color={'pink'}>Button</Button>
+                        <Button size={'small'} color={'pink'}>Button</Button>
+                    </div>
+
+                    <hr/>
+
+                    <div>
+                        <Button size={'large'} color={'gray'}>Button</Button>
+                        <Button color={'gray'}>Button</Button>
+                        <Button size={'small'} color={'gray'}>Button</Button>
+                    </div>
+
+                    <hr/>
+
+                    <div>
+                        <Button size={'large'} outline>Button</Button>
+                        <Button color={'gray'} outline>Button</Button>
+                        <Button size={'small'} color={'pink'}
+                                outline>Button</Button>
+                    </div>
+
+                    <hr/>
+
+                    <>
+                        <Button fullWidth>Button</Button>
+                        <Button color={'gray'} fullWidth>Button</Button>
+                        <Button color={'pink'} fullWidth>Button</Button>
+                    </>
+                </div>
             </div>
         </div>
     );
