@@ -11,6 +11,8 @@ import {useState} from "react";
 import UseReducer from "./components/tutorials/UseReducer";
 import ContextApi from "./components/tutorials/ContextApi";
 import ImmerSample from "./components/tutorials/ImmerSample";
+import HelloWithClass from "./components/tutorials/HelloWithClass";
+import CounterWithClass from "./components/tutorials/CounterWithClass";
 
 function App() {
     const header = {
@@ -21,7 +23,9 @@ function App() {
         input: 'https://react.vlpt.us/basic/08-manage-input.html',
         array: 'https://react.vlpt.us/basic/11-render-array.html',
         arrays: 'https://react.vlpt.us/basic/12-variable-with-useRef.html',
-        reduce: 'https://react.vlpt.us/basic/20-useReducer.html'
+        reduce: 'https://react.vlpt.us/basic/20-useReducer.html',
+        immer: 'https://react.vlpt.us/basic/23-immer.html',
+        classComponent: 'https://react.vlpt.us/basic/24-class-component.html'
     }
 
     const propName = "App's Name"
@@ -191,7 +195,7 @@ function App() {
                 <h2>
                     <a
                         className="App-link"
-                        href={header.reduce}
+                        href={header.immer}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -199,6 +203,21 @@ function App() {
                     </a>
                 </h2>
                 <ImmerSample
+                />
+                <hr/>
+                <h2>
+                    <a
+                        className="App-link"
+                        href={header.classComponent}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        10. 클래스형 컴포넌트
+                    </a>
+                </h2>
+                <HelloWithClass
+                />
+                <CounterWithClass
                 />
             </div>
         </div>
