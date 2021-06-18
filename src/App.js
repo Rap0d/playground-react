@@ -18,6 +18,10 @@ import CssModuleSample from "./components/tutorials/CssModuleSample";
 import CheckBox from "./components/tutorials/CheckBox";
 import Circle from "./components/tutorials/Circle";
 import Dialog from "./components/tutorials/Dialog";
+import TodoTemplate from "./components/todo-list/TodoTemplate";
+import TodoHead from "./components/todo-list/TodoHead";
+import TodoList from "./components/todo-list/TodoList";
+import TodoCreate from "./components/todo-list/TodoCreate";
 
 function App() {
     const tutoHeader = {
@@ -81,7 +85,7 @@ function App() {
 
     return (
         <div className="App">
-            <div className="Container">
+            <div className="Container-tutorial">
                 <header className="App-header">
                     {/*<img src={logo} className="App-logo" alt="logo" />*/}
                     <h1>
@@ -351,8 +355,13 @@ function App() {
                     Delete Data?
                 </Dialog>
             </div>
+            <TodoTemplate>
+                <TodoHead/>
+                <TodoList/>
+                <TodoCreate/>
+            </TodoTemplate>
         </div>
-    );
+    )
 }
 
 export default App;
