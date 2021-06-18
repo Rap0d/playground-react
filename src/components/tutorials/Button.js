@@ -1,5 +1,5 @@
 import React from "react";
-import '../../scss/Button.scss'
+import '../../scss/Button.module.scss'
 import classNames from "classnames";
 
 /**
@@ -53,7 +53,7 @@ function Button(
 }
 
 Button.defaultProps = {
-    // 버튼 크기에 large, medium, samll 설정할 수 있도록 구현
+    // 버튼 크기에 large, medium, small 설정할 수 있도록 구현
     size: 'medium',
     color: 'blue'
 }

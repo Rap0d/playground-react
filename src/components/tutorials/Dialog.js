@@ -54,9 +54,7 @@ const DarkBackground = styled.div`
   animation-name: ${fadeIn};
   animation-fill-mode: forwards;
   
-    ${props =>
-    props.disappear &&
-    css`
+    ${props => props.disappear && css`
       animation-name: ${fadeOut};
     `}
 `;
@@ -81,9 +79,7 @@ const DialogBlock = styled.div`
   animation-name: ${slideUp};
   animation-fill-mode: forwards;
   
-    ${props =>
-    props.disappear &&
-    css`
+    ${props => props.disappear && css`
       animation-name: ${slideDown};
     `}
 `;
