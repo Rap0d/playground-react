@@ -16,11 +16,12 @@
 
   .sassTest {
     display: flex;
-    width: 512px;
+    width: 100%;
     border: 1px solid white;
-    padding: 1rem;
+    //padding: 1rem;
     align-items: center;
     flex-direction: column;
+    padding: 1rem 0;
 
     hr {
       margin: 1rem 0;

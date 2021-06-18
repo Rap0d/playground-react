@@ -14,6 +14,8 @@ import ImmerSample from "./components/tutorials/ImmerSample";
 import HelloWithClass from "./components/tutorials/HelloWithClass";
 import CounterWithClass from "./components/tutorials/CounterWithClass";
 import Button from "./components/tutorials/Button";
+import CssModuleSample from "./components/tutorials/CssModuleSample";
+import CheckBox from "./components/tutorials/CheckBox";
 
 function App() {
     const tutoHeader = {
@@ -30,7 +32,8 @@ function App() {
     }
 
     const styleHeader = {
-        sass: 'https://react.vlpt.us/styling/01-sass.html'
+        sass: 'https://react.vlpt.us/styling/01-sass.html',
+        cssModule: 'https://react.vlpt.us/styling/02-css-module.html'
     }
 
     const propName = "App's Name"
@@ -55,6 +58,11 @@ function App() {
             active: false
         }
     ])
+
+    const [check, setCheck] = useState(false)
+    const onChange = e => {
+        setCheck(e.target.checked)
+    }
 
     return (
         <div className="App">
@@ -274,6 +282,31 @@ function App() {
                         <Button color={'gray'} fullWidth>Button</Button>
                         <Button color={'pink'} fullWidth>Button</Button>
                     </>
+                </div>
+
+                <hr/>
+                <h1><a
+                    className="App-link"
+                    href={styleHeader.cssModule}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >CSS Module
+                </a></h1>
+                <div className={'sassTest'}>
+                    <CssModuleSample/>
+
+                    <hr/>
+
+                    <CheckBox
+                        onChange={onChange}
+                        checked={check}
+                    >
+                        다음 약관에 모두 동의
+                    </CheckBox>
+                    <p>
+                        <b>check: </b>
+                        {check ? 'true' : 'false'}
+                    </p>
                 </div>
             </div>
         </div>
