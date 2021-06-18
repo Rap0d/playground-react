@@ -16,6 +16,8 @@ import CounterWithClass from "./components/tutorials/CounterWithClass";
 import Button from "./components/tutorials/Button";
 import CssModuleSample from "./components/tutorials/CssModuleSample";
 import CheckBox from "./components/tutorials/CheckBox";
+import Circle from "./components/tutorials/Circle";
+import Dialog from "./components/tutorials/Dialog";
 
 function App() {
     const tutoHeader = {
@@ -62,6 +64,19 @@ function App() {
     const [check, setCheck] = useState(false)
     const onChange = e => {
         setCheck(e.target.checked)
+    }
+
+    const [dialog, setDialog] = useState(false)
+    const onClick = () => {
+        setDialog(true)
+    }
+    const onConfirm = () => {
+        console.log('confirm')
+        setDialog(false)
+    }
+    const onCancel = () => {
+        console.log('cancel')
+        setDialog(false)
     }
 
     return (
@@ -280,7 +295,11 @@ function App() {
                     <>
                         <Button fullWidth>Button</Button>
                         <Button color={'gray'} fullWidth>Button</Button>
-                        <Button color={'pink'} fullWidth>Button</Button>
+                        <Button
+                            color={'pink'}
+                            onClick={onClick}
+                            fullWidth
+                        >Delete</Button>
                     </>
                 </div>
 
@@ -308,6 +327,29 @@ function App() {
                         {check ? 'true' : 'false'}
                     </p>
                 </div>
+
+                <hr/>
+                <h1><a
+                    className="App-link"
+                    href={styleHeader.cssModule}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >Styled Components
+                </a></h1>
+                <div className={'sassTest'}>
+                    <Circle/>
+                </div>
+                <hr/>
+                <Dialog
+                    title={"Are you sure?"}
+                    confirmText={"Delete"}
+                    cancelText={"Cancel"}
+                    onConfirm={onConfirm}
+                    onCancel={onCancel}
+                    visible={dialog}
+                >
+                    Delete Data?
+                </Dialog>
             </div>
         </div>
     );
