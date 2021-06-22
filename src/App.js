@@ -18,6 +18,11 @@ import CssModuleSample from "./components/tutorials/CssModuleSample";
 import CheckBox from "./components/tutorials/CheckBox";
 import Circle from "./components/tutorials/Circle";
 import Dialog from "./components/tutorials/Dialog";
+import TodoTemplate from "./components/todo-list/TodoTemplate";
+import TodoHead from "./components/todo-list/TodoHead";
+import TodoList from "./components/todo-list/TodoList";
+import TodoCreate from "./components/todo-list/TodoCreate";
+import {TodoProvider} from "./components/todo-list/TodoContext";
 
 function App() {
     const tutoHeader = {
@@ -81,7 +86,7 @@ function App() {
 
     return (
         <div className="App">
-            <div className="Container">
+            <div className="Container-tutorial">
                 <header className="App-header">
                     {/*<img src={logo} className="App-logo" alt="logo" />*/}
                     <h1>
@@ -351,8 +356,19 @@ function App() {
                     Delete Data?
                 </Dialog>
             </div>
+            {/*
+            Todo관련 Context 들을 사용할 수 있도록,
+            TodoProvider를 불러와 모든 내용을 TodoProvider로 감싸준다.
+            */}
+            <TodoProvider>
+                <TodoTemplate>
+                    <TodoHead/>
+                    <TodoList/>
+                    <TodoCreate/>
+                </TodoTemplate>
+            </TodoProvider>
         </div>
-    );
+    )
 }
 
 export default App;
