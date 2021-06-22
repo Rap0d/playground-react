@@ -1,7 +1,10 @@
 import React from "react";
 import '../../scss/todo-list/TodoHead.scss'
+import {useTodoState} from "./TodoContext";
 
 function TodoHead() {
+    const todos = useTodoState();
+    console.log(todos);
     return (
         <div className={'TodoHead'}>
             <h1>2019년 7월 10일</h1>
