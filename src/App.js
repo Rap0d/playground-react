@@ -24,6 +24,7 @@ import TodoList from "./components/todo-list/TodoList";
 import TodoCreate from "./components/todo-list/TodoCreate";
 import {TodoProvider} from "./components/todo-list/TodoContext";
 import Users from "./components/tutorials/Users";
+import UsersWithHook from "./components/tutorials/UsersWithHook";
 
 function App() {
     const tutoHeader = {
@@ -374,6 +375,7 @@ function App() {
                 <Users>
 
                 </Users>
+                <UsersWithHook/>
             </div>
         </div>
     )
