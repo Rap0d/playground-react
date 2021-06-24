@@ -25,6 +25,8 @@ import TodoCreate from "./components/todo-list/TodoCreate";
 import {TodoProvider} from "./components/todo-list/TodoContext";
 import Users from "./components/tutorials/Users";
 import UsersWithHook from "./components/tutorials/UsersWithHook";
+import {UsersProvider} from "./components/tutorials/UsersContext";
+import UsersWithContext from "./components/tutorials/UsersWithContext";
 
 function App() {
     const tutoHeader = {
@@ -372,10 +374,11 @@ function App() {
                 </TodoProvider>
             </div>
             <div className={'ApiSamples'}>
-                <Users>
-
-                </Users>
+                <Users />
                 <UsersWithHook/>
+                <UsersProvider>
+                    <UsersWithContext />
+                </UsersProvider>
             </div>
         </div>
     )
