@@ -1,5 +1,5 @@
 import React from "react";
-import style from '../../scss/Box.module.scss'
+import style from '../../scss/tutorial/Box.module.scss'
 
 /**
  * CSS Module 에서 가져올 때 style.Box 와 같이 style 객체 내부 값을 참조

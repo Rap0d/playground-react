@@ -1,6 +1,6 @@
 import React from "react";
 import {MdCheckBox, MdCheckBoxOutlineBlank} from "react-icons/all";
-import styles from '../../scss/CheckBox.module.scss';
+import styles from '../../scss/tutorial/CheckBox.module.scss';
 import classNames from "classnames/bind";
 
 /**

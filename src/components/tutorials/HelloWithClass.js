@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import '../../scss/Hello.scss'
+import '../../scss/tutorial/Hello.scss'
 
 class HelloWithClass extends Component {
     static defaultProps = {

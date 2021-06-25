@@ -1,5 +1,5 @@
 import React from "react";
-import '../../scss/Button.module.scss'
+import '../../scss/tutorial/Button.module.scss'
 import classNames from "classnames";
 
 /**

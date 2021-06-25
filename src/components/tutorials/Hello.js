@@ -1,5 +1,5 @@
 import React from "react";
-import '../../scss/Hello.scss'
+import '../../scss/tutorial/Hello.scss'
 
 function Hello() {
     const name = 'React';
