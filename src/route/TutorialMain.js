@@ -20,6 +20,7 @@ import Users from "../components/tutorials/Users";
 import UsersWithHook from "../components/tutorials/UsersWithHook";
 import {UsersProvider} from "../components/tutorials/UsersContext";
 import UsersWithContext from "../components/tutorials/UsersWithContext";
+import '../scss/tutorial/Tutorial.scss'
 
 function TutorialMain() {
     const tutoHeader = {
@@ -86,22 +87,7 @@ function TutorialMain() {
     }
 
     return (
-        <div className="Container-tutorial">
-            <header className="App-header">
-                {/*<img src={logo} className="App-logo" alt="logo" />*/}
-                <h1>
-                    <a
-                        className="App-link"
-                        href="https://reactjs.org"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        React
-                    </a> Playground
-                </h1>
-
-                <hr/>
-            </header>
+        <div className={"Container-tutorial"}>
             <h2>
                 <a
                     className="App-link"
@@ -365,10 +351,10 @@ function TutorialMain() {
             >API
             </a></h1>
             <div className={'ApiSamples'}>
-                <Users />
+                <Users/>
                 <UsersWithHook/>
                 <UsersProvider>
-                    <UsersWithContext />
+                    <UsersWithContext/>
                 </UsersProvider>
             </div>
         </div>

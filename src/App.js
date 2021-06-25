@@ -8,23 +8,25 @@ import TodoMain from "./route/TodoMain";
 const App = () => {
     return (
         <div className="App">
-            <ul>
-                <li>
-                    <Link to={"/"}>Home</Link>
-                </li>
-                <li>
-                    <Link to={"/about"}>About</Link>
-                </li>
-                <li>
-                    <Link to={"/tutorial"}>Tutorial Samples</Link>
-                </li>
-                <li>
-                    <Link to={"/todo"}>TodoList</Link>
-                </li>
+            <div className={"App-header"}>
+                <h1>React Playground</h1>
+                <ul>
+                    <li>
+                        <Link to={"/"}>Home</Link>
+                    </li>
+                    <li>
+                        <Link to={"/tutorial"}>Tutorial Samples</Link>
+                    </li>
+                    <li>
+                        <Link to={"/todo"}>TodoList</Link>
+                    </li>
+                    <li>
+                        <Link to={"/about"}>About</Link>
+                    </li>
+                </ul>
 
-            </ul>
-
-            <hr/>
+                <hr/>
+            </div>
 
             {/*
             exact true 옵션을 넣지 않으면 /about 경로에 갈 때도
