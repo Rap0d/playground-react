@@ -6,8 +6,8 @@ const profileData = {
         description:
             'Engineer'
     },
-    gildong: {
-        name: 'Hong',
+    hong: {
+        name: 'gildong',
         description:
             'Gildong'
     }
