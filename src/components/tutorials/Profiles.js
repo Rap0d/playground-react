@@ -1,18 +1,47 @@
 import React from "react";
-import {Link, Route} from "react-router-dom";
+import {Link, NavLink, Route} from "react-router-dom";
 import Profile from "./Profile";
 import WithRouterSample from "./WithRouterSample";
 
 const Profiles = () => {
     return (
         <div>
-            <h3>Users:</h3>
+            <h3>Users List with Link Class:</h3>
             <ul>
                 <li>
                     <Link to={"/profiles/chang"}>chang</Link>
                 </li>
                 <li>
                     <Link to={"/profiles/hong"}>hong</Link>
+                </li>
+            </ul>
+
+            <h3>Users List with NavLink Class:</h3>
+            {/*
+            현재 경로와 Link에서 사용하는 경로가 일치하는 경우
+            특정 스타일 혹은 클래스를 적용할 수 있는 컴포넌트
+
+            그 외 기능:
+            - Redirect: 페이지 리디렉트
+            - Prompt: 이전에 사용했던 history.block의 컴포넌트 버전
+            - Route Config: JSX 형태로 라우트를 선언하는 것이 아닌
+                Angular나 Vue와 같이 배열 / 객체를 사용하여 라우트 정의
+            - Memory Router: 실제 주소는 존재하지 않는 라우터.
+                리액트 네이티브나 임베디드 웹앱에서 사용
+            - https://reacttraining.com/react-router/web/guides/philosophy
+            */}
+            <ul>
+                <li>
+                    <NavLink
+                        to={"/profiles/chang"}
+                        activeStyle={{background: 'white', color: 'black'}}
+                    >chang</NavLink>
+                </li>
+                <li>
+                    <NavLink
+                        to={"/profiles/hong"}
+                        activeStyle={{background: 'white', color: 'black'}}
+                    >hong</NavLink>
                 </li>
             </ul>
 
