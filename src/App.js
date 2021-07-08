@@ -6,6 +6,7 @@ import TutorialMain from "./route/TutorialMain";
 import TodoMain from "./route/TodoMain";
 import Profiles from "./components/tutorials/Profiles";
 import HistorySample from "./components/tutorials/HistorySample";
+import ReduxMain from "./route/ReduxMain";
 
 const App = () => {
     return (
@@ -28,7 +29,9 @@ const App = () => {
                     <li>
                         <Link to={"/history"}>History Sample</Link>
                     </li>
-
+                    <li>
+                        <Link to={"/redux"}>Redux Sample</Link>
+                    </li>
                     <li>
                         <Link to={"/about"}>About</Link>
                     </li>
@@ -54,6 +57,7 @@ const App = () => {
 
                 <Route path="/profiles/" component={Profiles}/>
                 <Route path={"/history"} component={HistorySample}/>
+                <Route path={"/redux"} component={ReduxMain}/>
                 <Route
                     // path를 따로 정의하지 않으면 모든 상황에 렌더링
                     render={({location}) => (
