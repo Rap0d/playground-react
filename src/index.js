@@ -7,8 +7,9 @@ import {BrowserRouter} from "react-router-dom";
 import {createStore} from 'redux'
 import {Provider} from "react-redux";
 import rootReducer from "./modules";
+import {composeWithDevTools} from "redux-devtools-extension";
 
-const store = createStore(rootReducer)
+const store = createStore(rootReducer, composeWithDevTools())
 console.log(store.getState()); // 스토어의 상태를 확인해봅시다.
 
 ReactDOM.render(
