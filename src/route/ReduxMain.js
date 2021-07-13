@@ -1,10 +1,14 @@
 import React from "react";
-import CounterContainer from "../components/redux-sample/CounterContainer";
+import CounterContainer from "../containers/redux-sample/CounterContainer";
+import TodosContainer from "../containers/redux-sample/TodosContainer";
 
 const ReduxMain = () => {
     return (
         <>
             <CounterContainer
+            />
+            <hr/>
+            <TodosContainer
             />
         </>
     )
