@@ -8,7 +8,6 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
     "classnames": "^2.3.1",
-    "electron": "^13.1.6",
     "foreman": "^3.0.1",
     "immer": "^9.0.3",
     "qs": "^6.10.1",
@@ -26,7 +25,17 @@
     "use-react-router": "^1.0.7",
     "web-vitals": "^1.0.1"
   },
+  "homepage": "./",
   "main": "src/electron-starter.js",
+  "build": {
+    "extends": null,
+    "appId": "com.electron.playground-react-app",
+    "directories": {
+      "output": "dist",
+      "buildResources": "public"
+    },
+    "target": "zip"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -34,7 +43,10 @@
     "eject": "react-scripts eject",
     "electron": "electron",
     "electron-start": "node src/start-react",
-    "react-start": "cross-env BROWSER=none react-scripts start"
+    "react-start": "cross-env BROWSER=none react-scripts start",
+    "dev": "react-scripts start",
+    "pack": "electron-builder --dir",
+    "dist": "npm run build && electron-builder"
   },
   "eslintConfig": {
     "extends": [
@@ -55,6 +67,8 @@
     ]
   },
   "devDependencies": {
-    "cross-env": "^7.0.3"
+    "electron": "^13.1.6",
+    "cross-env": "^7.0.3",
+    "electron-builder": "^22.11.7"
   }
 }
