@@ -8,6 +8,8 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
     "classnames": "^2.3.1",
+    "electron": "^13.1.6",
+    "foreman": "^3.0.1",
     "immer": "^9.0.3",
     "qs": "^6.10.1",
     "react": "^17.0.2",
@@ -24,11 +26,13 @@
     "use-react-router": "^1.0.7",
     "web-vitals": "^1.0.1"
   },
+  "main": "src/electron-starter.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron": "electron"
   },
   "eslintConfig": {
     "extends": [
@@ -47,5 +51,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   }
 }
