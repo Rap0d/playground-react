@@ -32,7 +32,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "electron": "electron"
+    "electron": "electron",
+    "electron-start": "node src/start-react",
+    "react-start": "cross-env BROWSER=none react-scripts start"
   },
   "eslintConfig": {
     "extends": [
