@@ -4,13 +4,21 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
-import {createStore} from 'redux'
+import {applyMiddleware, createStore} from 'redux'
 import {Provider} from "react-redux";
 import rootReducer from "./modules";
 import {composeWithDevTools} from "redux-devtools-extension";
+import myLogger from "./middlewares/myLogger";
 
-const store = createStore(rootReducer, composeWithDevTools())
-console.log(store.getState()); // 스토어의 상태를 확인해봅시다.
+/*
+store에 미들웨어를 적용할 때 applyMiddleware 함수를 사용한다.
+ */
+const store = createStore(
+    rootReducer,
+    composeWithDevTools(),
+    applyMiddleware(myLogger)
+)
+console.log(store.getState()); // Check Store state
 
 ReactDOM.render(
     <React.StrictMode>
