@@ -8,17 +8,23 @@ import {applyMiddleware, createStore} from 'redux'
 import {Provider} from "react-redux";
 import rootReducer from "./modules";
 import {composeWithDevTools} from "redux-devtools-extension";
-import myLogger from "./middlewares/myLogger";
+import logger from 'redux-logger'
+import ReduxThunk from 'redux-thunk'
 
 /*
 store에 미들웨어를 적용할 때 applyMiddleware 함수를 사용한다.
  */
 const store = createStore(
     rootReducer,
-    composeWithDevTools(),
-    applyMiddleware(myLogger)
+    composeWithDevTools(
+        // logger를 사용하는 경우, logger 는 항상 맨 마지막에 있어야 한다
+        applyMiddleware(
+            ReduxThunk,
+            logger
+        )
+    )
 )
-console.log(store.getState()); // Check Store state
+// console.log(store.getState()); // Check Store state
 
 ReactDOM.render(
     <React.StrictMode>

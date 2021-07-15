@@ -1,6 +1,6 @@
 import React from 'react'
 import {shallowEqual, useDispatch, useSelector} from "react-redux";
-import {decrease, increase, setDiff} from "../../modules/counter";
+import {decreaseAsync, increaseAsync, setDiff} from "../../modules/counter";
 import Counter from "../../components/redux-sample/Counter";
 
 function CounterContainer() {
@@ -22,8 +22,8 @@ function CounterContainer() {
 
     const dispatch = useDispatch()
 
-    const onIncrease = () => dispatch(increase())
-    const onDecrease = () => dispatch(decrease())
+    const onIncrease = () => dispatch(increaseAsync())
+    const onDecrease = () => dispatch(decreaseAsync())
     const onSetDiff = diff => dispatch(setDiff(diff))
 
     return (
